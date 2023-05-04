@@ -90,6 +90,7 @@ const products = [
 		pc: true,
 	},
 ]
+
 export default function Home() {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
@@ -108,7 +109,7 @@ export default function Home() {
 		<>
 			<div className="bg-white">
 				<div>
-					<main className="mx-auto px-4 sm:px-6 lg:px-8 mt-2">
+					<main className="mx-auto px-4 sm:px-6 lg:px-8">
 						<PageHeader />
 						<section aria-labelledby="products-heading" className="pb-24 pt-3">
 							<div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5 ">

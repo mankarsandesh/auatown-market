@@ -64,12 +64,13 @@ export default function Filter() {
 	return (
 		<>
 			<form className="hidden lg:block">
+				<span className="font-medium text-gray-900 text-sm">Category</span>
 				<ul
 					role="list"
-					className="space-y-4 border-b border-gray-200 text-sm font-medium text-gray-900 pb-2"
+					className="space-y-2 border-b border-gray-200 text-sm font-medium text-gray-600 pb-2"
 				>
 					{subCategories.map((category) => (
-						<li key={category.name} className="my-2">
+						<li key={category.name} className="my-1 pl-2">
 							<a href={category.href}>{category.name}</a>
 						</li>
 					))}
@@ -80,7 +81,7 @@ export default function Filter() {
 						{({ open }) => (
 							<>
 								<h3 className=" flow-root">
-									<Disclosure.Button className="flex w-full items-center justify-between bg-white py-2 text-sm text-gray-400 hover:text-gray-500">
+									<Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
 										<span className="font-medium text-gray-900">
 											{section.name}
 										</span>
@@ -94,7 +95,7 @@ export default function Filter() {
 									</Disclosure.Button>
 								</h3>
 								<Disclosure.Panel>
-									<div className="space-y-2">
+									<div className="space-y-2 pl-2">
 										{section.options.map((option, optionIdx) => (
 											<div key={option.value} className="flex items-center">
 												<input

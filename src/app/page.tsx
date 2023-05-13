@@ -1,10 +1,10 @@
 'use client' // this is a client component 👈🏽
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
-const PageHeader = dynamic(() => import('../../components/PageHeader'), {
+const PageHeader = dynamic(() => import('../components/PageHeader'), {
 	ssr: false,
 })
-const Filter = dynamic(() => import('../../components/Filter'), {
+const Filter = dynamic(() => import('../components/Filter'), {
 	ssr: false,
 })
 
@@ -90,7 +90,6 @@ const products = [
 		pc: true,
 	},
 ]
-
 export default function Home() {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
@@ -109,12 +108,12 @@ export default function Home() {
 		<>
 			<div className="bg-white">
 				<div>
-					<main className="mx-auto px-4 sm:px-6 lg:px-8">
-						<PageHeader />
+					<main className="mx-auto px-4 sm:px-6 lg:px-8 mt-2">
 						<section aria-labelledby="products-heading" className="pb-24 pt-3">
 							<div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5 ">
 								<Filter />
 								<div className="lg:col-span-4">
+									<PageHeader />
 									<div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 										{products.map((product) => (
 											<div key={product.id} className="group relative ">

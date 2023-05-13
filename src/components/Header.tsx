@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+
 import {
 	Bars3Icon,
 	BellIcon,
@@ -34,7 +35,7 @@ export default function Header() {
 			>
 				{({ open }) => (
 					<>
-						<div className="mx-auto  px-2 sm:px-4 lg:px-8">
+						<div className="mx-auto  px-2 sm:px-4 lg:px-8 border">
 							<div className="relative flex h-16 items-center justify-between lg:border-b lg:border-purple-400 lg:border-opacity-25">
 								<div className="flex items-center px-2 lg:px-0">
 									<div className="flex-shrink-0">

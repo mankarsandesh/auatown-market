@@ -32,7 +32,7 @@ export default function PageHeader() {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 	return (
 		<>
-			<div className="flex items-baseline justify-between border-b border-gray-200  my-6">
+			<div className="flex items-baseline justify-between border-b border-gray-200   pb-2">
 				<h1 className="text-xl font-bold tracking-tight text-gray-600 ">
 					New Avatar Items
 				</h1>

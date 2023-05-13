@@ -2,7 +2,7 @@
 import './globals.css'
 
 import dynamic from 'next/dynamic'
-const Header = dynamic(() => import('../../components/Header'), {
+const Header = dynamic(() => import('../components/Header'), {
 	ssr: false,
 })
 
@@ -16,7 +16,6 @@ export default function RootLayout({
 			<body>
 				<div className="min-h-full">
 					<Header />
-
 					{children}
 				</div>
 			</body>

@@ -1,5 +1,3 @@
-'use client' // this is a client component 👈🏽
-
 import { Fragment } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
@@ -66,10 +64,9 @@ export default function Filter() {
 	return (
 		<>
 			<form className="hidden lg:block">
-				<h3 className="sr-only">Categories</h3>
 				<ul
 					role="list"
-					className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
+					className="space-y-4 border-b border-gray-200 text-sm font-medium text-gray-900 pb-2"
 				>
 					{subCategories.map((category) => (
 						<li key={category.name} className="my-2">
@@ -79,11 +76,11 @@ export default function Filter() {
 				</ul>
 
 				{filters.map((section) => (
-					<Disclosure as="div" key={section.id} className=" py-8 mt-4  ">
+					<Disclosure as="div" key={section.id}>
 						{({ open }) => (
 							<>
 								<h3 className=" flow-root">
-									<Disclosure.Button className="flex w-full items-center justify-between bg-white py-4 text-sm text-gray-400 hover:text-gray-500">
+									<Disclosure.Button className="flex w-full items-center justify-between bg-white py-2 text-sm text-gray-400 hover:text-gray-500">
 										<span className="font-medium text-gray-900">
 											{section.name}
 										</span>
@@ -96,13 +93,10 @@ export default function Filter() {
 										</span>
 									</Disclosure.Button>
 								</h3>
-								<Disclosure.Panel className="pt-6">
-									<div className="space-y-4">
+								<Disclosure.Panel>
+									<div className="space-y-2">
 										{section.options.map((option, optionIdx) => (
-											<div
-												key={option.value}
-												className="flex items-center my-2"
-											>
+											<div key={option.value} className="flex items-center">
 												<input
 													id={`filter-${section.id}-${optionIdx}`}
 													name={`${section.id}[]`}

@@ -2,14 +2,14 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-
+import Image from 'next/image'
+import Link from 'next/link'
 import {
 	Bars3Icon,
 	BellIcon,
 	XMarkIcon,
 	ShoppingCartIcon,
 } from '@heroicons/react/24/outline'
-import Logo from './logo,png'
 const user = {
 	name: 'Sandesh Mankar',
 	email: 'mankarsandesh111@gmail.com',
@@ -36,24 +36,28 @@ export default function Header() {
 			>
 				{({ open }) => (
 					<>
-						<div className="mx-auto  px-2 sm:px-4 lg:px-8 border">
+						<div className="mx-auto  px-2 sm:px-4 lg:px-8 ">
 							<div className="relative flex h-16 items-center justify-between lg:border-b lg:border-purple-400 lg:border-opacity-25">
 								<div className="flex items-center px-2 lg:px-0">
 									<div className="flex-shrink-0">
-										<img
-											className="block h-12"
-											src="./logo.png"
-											alt="Your Company"
-										/>
+										<Link href="./">
+											<Image
+												className="block h-12"
+												src="/logo.png"
+												alt="Your Company"
+												width="200"
+												height="120"
+											/>
+										</Link>
 									</div>
 									<div className="hidden lg:ml-10 lg:block">
-										<a
-											href=""
+										<Link
+											href="./"
 											className="text-xl text-purple-700 rounded-xl bg-gray-200 px-6 py-2"
 										>
 											{' '}
 											Go to Marketpage
-										</a>
+										</Link>
 									</div>
 								</div>
 								<div className="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">

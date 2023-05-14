@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	ChevronDownIcon,
 	Bars3Icon,
@@ -29,7 +31,6 @@ function classNames(...classes) {
 }
 
 export default function PageHeader() {
-	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 	return (
 		<>
 			<div className="flex items-baseline justify-between border-b border-gray-200   pb-2">
@@ -93,7 +94,6 @@ export default function PageHeader() {
 					<button
 						type="button"
 						className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-						onClick={() => setMobileFiltersOpen(true)}
 					>
 						<span className="sr-only">Filters</span>
 						<FunnelIcon className="h-5 w-5" aria-hidden="true" />

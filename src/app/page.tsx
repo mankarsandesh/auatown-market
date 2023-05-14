@@ -1,97 +1,27 @@
-'use client' // this is a client component 👈🏽
 import { useState } from 'react'
+
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import products from '../data/products.json'
 const PageHeader = dynamic(() => import('../components/PageHeader'), {
 	ssr: false,
 })
 const Filter = dynamic(() => import('../components/Filter'), {
-	ssr: false,
+	ssr: true,
 })
 
+// import Filter from '../components/Filter'
+// import PageHeader from '../components/PageHeader'
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
 }
 import { StarIcon } from '@heroicons/react/20/solid'
 import { ShoppingCartIcon } from '@heroicons/react/24/outline'
-const products = [
-	{
-		id: 1,
-		name: 'Avatar name "Avatown - Nice Orgienl of Avaton',
-		description:
-			'Auto Upload service ready. you can use this avater within 24 hours.',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$354',
-		color: 'Black',
-		rating: 3.9,
-		reviewCount: 117,
-		pc: true,
-	},
-	{
-		id: 2,
-		name: 'Avatar name "Avatown - Nice Orgienl of Avaton',
-		description:
-			'Auto Upload service ready. you can use this avater within 24 hours.',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$354',
-		color: 'Black',
-		rating: 3.9,
-		reviewCount: 117,
-		pc: true,
-	},
-	{
-		id: 3,
-		name: 'Avatar name "Avatown - Nice Orgienl of Avaton',
-		description:
-			'Auto Upload service ready. you can use this avater within 24 hours.',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$354',
-		color: 'Black',
-		rating: 3.9,
-		reviewCount: 117,
-		pc: true,
-	},
-	{
-		id: 4,
-		name: 'Avatar name "Avatown - Nice Orgienl of Avaton',
-		description:
-			'Auto Upload service ready. you can use this avater within 24 hours.',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$354',
-		color: 'Black',
-		rating: 3.9,
-		reviewCount: 117,
-		pc: true,
-	},
-	{
-		id: 5,
-		name: 'Avatar name "Avatown - Nice Orgienl of Avaton',
-		description:
-			'Auto Upload service ready. you can use this avater within 24 hours.',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$354',
-		color: 'Black',
-		rating: 3.9,
-		reviewCount: 117,
-		pc: true,
-	},
-]
+
 export default function Home() {
-	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+	function getRandomInt(max) {
+		return Math.floor(Math.random() * max)
+	}
 
 	const renduerPcOnly = (value) => {
 		if (value) {
@@ -118,10 +48,12 @@ export default function Home() {
 										{products.map((product) => (
 											<div key={product.id} className="group relative ">
 												<div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-													<img
-														src={product.imageSrc}
+													<Image
+														src={'/avatar/' + product.imageSrc}
 														alt={product.imageAlt}
 														className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+														width={500}
+														height={500}
 													/>
 												</div>
 												<button
@@ -161,21 +93,26 @@ export default function Home() {
 															</p>
 															<a
 																href="#"
-																className="ml-3 text-sm font-medium text-gray-600 hover:text-indigo-500"
+																className="ml-2 text-sm font-medium text-gray-800 hover:text-indigo-500"
 															>
-																{product.reviewCount} & 1211 likes
+																{getRandomInt(40)} & {getRandomInt(10000)}
+																<span className="ml-1 text-gray-600">
+																	likes
+																</span>
 															</a>
 														</div>
 														<div className="flex items-center py-2 ">
-															<img
-																src={product.imageSrc}
-																alt={product.imageAlt}
+															<Image
+																src="/Sandesh.jpg"
+																alt="Sandesh Mankar"
 																className=" object-cover object-center w-6 h-6 mr-2"
+																width={500}
+																height={500}
 															/>
 															<div>Sandesh Mankar</div>
 														</div>
 														<p className="text-2xl text-gray-900">
-															{product.price}
+															$ {getRandomInt(400)}
 														</p>
 														{renduerPcOnly(product.pc)}
 														<p className="mt-1 text-sm text-gray-500">

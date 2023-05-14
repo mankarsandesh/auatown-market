@@ -1,3 +1,4 @@
+'use client'
 import { Fragment } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
@@ -81,7 +82,7 @@ export default function Filter() {
 						{({ open }) => (
 							<>
 								<h3 className=" flow-root">
-									<Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
+									<Disclosure.Button className="flex w-full items-center justify-between bg-white py-2 text-sm text-gray-400 hover:text-gray-500">
 										<span className="font-medium text-gray-900">
 											{section.name}
 										</span>

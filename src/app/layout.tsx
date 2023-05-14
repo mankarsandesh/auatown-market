@@ -1,10 +1,10 @@
-'use client' // this is a client component 👈🏽
 import './globals.css'
 
 import dynamic from 'next/dynamic'
-const Header = dynamic(() => import('../components/Header'), {
-	ssr: false,
-})
+// const Header = dynamic(() => import('../components/Header'), {
+// 	ssr: false,
+// })
+import Header from '../components/Header'
 
 export default function RootLayout({
 	children,
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>
+			<body suppressHydrationWarning={true}>
 				<div className="min-h-full">
 					<Header />
 					{children}

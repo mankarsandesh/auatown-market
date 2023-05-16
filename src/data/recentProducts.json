@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Avatar name Avatown - Nice Orgienl of Avaton description Auto Upload service ready. you can use this avater within 24 hours.",
+        "href": "#",
+        "imageSrc": "VRC image A(F).png",
+        "imageAlt": "Front of men's Basic Tee in black.",
+        "color": "Black",
+        "rating": 3.9,
+        "pc": true
+    },
+    {
+        "id": 2,
+        "name": "Avatar name Avatown - Nice Orgienl of Avaton description Auto Upload service ready. you can use this avater within 24 hours.",
+        "href": "#",
+        "imageSrc": "VRC image B(F).png",
+        "imageAlt": "Front of men's Basic Tee in black.",
+        "color": "Black",
+        "rating": 3.9,
+        "pc": true
+    },
+    {
+        "id": 3,
+        "name": "Avatar name Avatown - Nice Orgienl of Avaton description Auto Upload service ready. you can use this avater within 24 hours.",
+        "href": "#",
+        "imageSrc": "VRC image C(M).png",
+        "imageAlt": "Front of men's Basic Tee in black.",
+        "color": "Black",
+        "rating": 3.9,
+        "pc": true
+    },
+    {
+        "id": 3,
+        "name": "Avatar name Avatown - Nice Orgienl of Avaton description Auto Upload service ready. you can use this avater within 24 hours.",
+        "href": "#",
+        "imageSrc": "VRC image C(M).png",
+        "imageAlt": "Front of men's Basic Tee in black.",
+        "color": "Black",
+        "rating": 3.9,
+        "pc": true
+    }
+]

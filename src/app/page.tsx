@@ -1,5 +1,5 @@
+'use context'
 import { useState } from 'react'
-
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
@@ -11,8 +11,6 @@ const Filter = dynamic(() => import('../components/Filter'), {
 	ssr: true,
 })
 
-// import Filter from '../components/Filter'
-// import PageHeader from '../components/PageHeader'
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ')
 }
@@ -67,13 +65,13 @@ export default function Home() {
 													<div className="mt-4 flex justify-between">
 														<div>
 															<h3 className="text-sm text-gray-700">
-																<a href={product.href}>
+																<span>
 																	<span
 																		aria-hidden="true"
 																		className="absolute inset-0"
 																	/>
 																	{product.name}
-																</a>
+																</span>
 															</h3>
 															<div className="flex items-center">
 																<div className="flex items-center">
@@ -93,15 +91,12 @@ export default function Home() {
 																<p className="sr-only">
 																	{product.rating} out of 5 stars
 																</p>
-																<a
-																	href="#"
-																	className="ml-2 text-sm font-medium text-gray-800 hover:text-indigo-500"
-																>
+																<span className="ml-2 text-sm font-medium text-gray-800 hover:text-indigo-500">
 																	{getRandomInt(40)} & {getRandomInt(10000)}
 																	<span className="ml-1 text-gray-600">
 																		likes
 																	</span>
-																</a>
+																</span>
 															</div>
 															<div className="flex items-center py-2 ">
 																<Image

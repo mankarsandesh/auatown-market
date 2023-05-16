@@ -72,7 +72,7 @@ export default function Filter() {
 				>
 					{subCategories.map((category) => (
 						<li key={category.name} className="my-1 pl-2">
-							<a href={category.href}>{category.name}</a>
+							{category.name}
 						</li>
 					))}
 				</ul>
